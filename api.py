@@ -4,8 +4,8 @@ import json
 base_key = "USD"
 sym_key = "RUB"
 amount = 100
-
-r = requests.get(f"https://api.exchangeratesapi.io/latest?base={base_key}&symbols={sym_key}")
+                   
+r = requests.get(f"https://api.exchangeratesapi.io/latest?base=USD&symbols=RUB")
 resp = json.loads(r.content)
 new_price = resp['rates'][sym_key] * amount
 
