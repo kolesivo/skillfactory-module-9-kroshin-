@@ -1,7 +1,7 @@
 import telebot
 from extensions import APIException, Convertor
 from config import TOKEN, exchanges
-import trace
+import traceback
 
 bot = telebot.TeleBot(TOKEN)
 
