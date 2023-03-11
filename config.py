@@ -7,18 +7,3 @@ exchanges = {
 }
 TOKEN = "6007372204:AAFHgTbPdOt60prj6f-A9pN3Ra02TWsFFUc"
 
-bot = telebot.TeleBot(TOKEN)
-
-@bot.message_handler(commands=['start', 'help'])
-def start(message: telebot.types.Message):
-    text = "Приветствие!"
-    bot.send_message(message.chat.id, text)
-
-@bot.message_handler(commands=['values'])
-def values(message: telebot.types.Message):
-    text = 'Доступные валюты:'
-    for i in exchanges.keys():
-        text = '\n'.join((text, i))
-    bot.reply_to(message, text)
-
-bot.polling()
